@@ -1,0 +1,17 @@
+To fix the issue, ensure that all values used within the `calc()` function are correctly defined and resolve to valid dimensions.  If using `calc()` within a flexbox item to determine the width, consider setting a specific width on the parent container. Also, check for typos or missing units in the calculation.  
+
+In the provided example, adding a defined width to the parent container (`.container`) resolves the issue.
+
+```css
+/* solution.css */
+.container {
+  width: 500px; /* Explicit width added */
+  display: flex;
+}
+
+.item {
+  width: calc(100% - 20px);
+  background-color: lightblue;
+  padding: 10px;
+}
+```
